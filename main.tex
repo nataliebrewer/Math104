@@ -1,0 +1,182 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+
+\title{Math 104 Homework 1}
+\author{Natalie Brewer}
+\date{January 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Exercises 1.2}
+\textbf{1.2.1}
+(a) Prove that $\sqrt{3}$ is irrational. Does a similar argument work to show $\sqrt{6}$ is irrational?
+
+\textbf{Proof}: Suppose for contradiction that $\sqrt{3}$ is rational. Let p and q be integers such that  $\frac{p}{q} = \sqrt{3}$ is in least terms. Thus, p and q have no common factors.
+
+    \begin{equation}
+        \left( \frac{p}{q} \right)^2 = 3
+    \end{equation}
+    \begin{equation}
+        p^2 = 3q^2
+    \end{equation}
+
+So 3 divides $p^2$ and hence divides $p$ because 3 is prime. So $p = 3r$ for some $r \in \mathbb{Z}$.
+    \begin{equation}
+        p^2 = (3r)^2 = 9r^2 = 3q^2
+    \end{equation}
+    \begin{equation}
+        3r^2 = q^2
+    \end{equation}
+
+Now 3 divides $q^2$ and hence $q$. So $p$ and $q$ share a common factor 3, contradicting our initial assumption. \qed\\
+
+A similar argument works to show that $\sqrt{6}$ is irrational. However, instead of arguing that $6 \mid p^2$ implies that $6 \mid p$ because it is prime, we use the fact that 2 and 3 must divide $p$ because they are the prime factors of 6. This implies that $6 \mid p$. \\
+
+(b) Where does the proof of Theorem 1.1.1 break down if we try to use it to prove $\sqrt{4}$ is irrational?
+
+The proof breaks down in the step where we would say $4 \mid p^2$ implies $4 \mid p$. Because 4 is a perfect square, this statement is not necessarily true. Consider the counterexample where $p = 2$. Here, 4 divides $p^2 = 4$, but not $p$.\\
+
+
+
+\noindent \textbf{1.2.5} 
+Let A and B be subsets of $\mathbb{R}$.
+
+(a) If $x \in (A \cap B)^c$, explain why $x \in A^c \cup B^c$. This shows that $(A \cap B)^c 	\subseteq A^c \cup B^c$.
+
+If x belongs to the complement of the intersection $A \cap B$, then x does not belong to the intersection. So x does not belong to both A and B. This means that x must belong to at least one of $A^c$ or $B^c$. \\
+
+(b) Prove the reverse inclusion $(A \cap B)^c \supseteq A^c \cup B^c$, and conclude that $(A \cap B)^c = A^c \cup B^c$.
+
+\textbf{Proof}: Let $x \in (A^c \cup B^c)$. Then $x \in A^c$ or $x \in B^c$ or both. This means that $x \notin A$ or $x \notin B$ or x is in neither. So $x$ cannot be in both A and B, the intersection. Written using operators, $x \notin (A \cap B)$. This is equivalent to saying $x \in (A \cap B)^c$. \qed\\
+
+(c) Show $(A \cup B)^c = A^c \cap B^c$ by demonstrating inclusion both ways.
+
+\textbf{Proof}: First we show that $x \in (A \cup B)^c \implies x \in A^c \cap B^c$.
+
+Suppose $x \in (A \cup B)^c$. This means that $x$ is not in $A \cup B$. Therefore, $x$ is not in A and $x$ is not in B. Hence, $x \in A^c $ and $x \in B^c$. This implies $x \in A^c \cap B^c$. \\
+
+
+Next, we show that $x \in A^c \cap B^c \implies x \in (A \cup B)^c$.
+
+Suppose $x \in A^c \cap B^c$. This means that $x$ is not in $A$ and $x$ is not in $B$. Therefore, $x$ is not in $A \cup B$. Hence, $x \in (A \cup B)^c $.
+
+We have shown that each set is a subset of the other and therefore, $$ (A \cup B)^c = A^c \cap B^c $$ \qed\\
+
+
+
+\noindent \textbf{1.2.7}
+Given a function $f$ and a subset $A$ of its domain, let $f(A)$
+represent the range of $f$ over the set $A$; that is, $f(A) = \{f(x) : x \in A\}$.
+
+(a) Let $f(x) = x^2$. If $A = [0, 2]$ (the closed interval $\{x \in \mathbb{R} : 0 \leq x \leq 2\}$) and $B = [1, 4]$, find $f(A)$ and $f(B)$. Does $f(A \cap B) = f(A) \cap f(B)$ in this case? Does $f(A \cup B) = f(A) \cup f(B)$?
+
+$$ f(A) = [0,4]$$
+$$ f(B) = [1,16]$$
+$$ f(A \cap B) = f([1,2]) = [1,4]$$
+$$ f(A) \cap f(B) = f([1,2]) = [0,4] \cap [1, 16] = [1,4]$$
+
+$$ f(A \cup B) = f([0,4]) = [0,16]$$
+$$ f(A) \cup f(B) = [0,4] \cup [1,16] = [0,16]$$
+
+In this case $f(A \cap B) = f(A) \cap f(B)$ and $f(A \cup B) = f(A) \cup f(B)$. \\
+
+(b) Find two sets $A$ and $B$ for which $f(A \cap B) \neq f(A) \cap f(B)$.
+
+Let $A = [0,1]$ and $B = \{-1\}$. Then
+$$ f(A) = [0,1]$$
+$$ f(B) = \{1\} $$
+$$ f(A \cap B) = f(\emptyset) = \emptyset$$
+$$ f(A) \cap f(B) = [0,1] \cap \{1\} = \{1\}$$ 
+
+(c) Show that, for an arbitrary function $g : \mathbb{R} \rightarrow \mathbb{R}$, it is always true that
+$g(A \cap B) \subseteq g(A) \cap g(B)$ for all sets $A, B \subseteq \mathbb{R}$. 
+
+\textbf{Proof:} Let $y \in \mathbb{R}$ such that $y \in g(A \cap B)$. Then, $y = g(x)$ for some $x \in (A \cap B)$. Since $x$ is in the intersection, $x$ belongs to both A and B. Thus, $y$ belongs to both $g(A)$ and $g(B)$, i.e. $y \in g(A) \cap g(B)$. \qed\\
+
+(d) Form and prove a conjecture about the relationship between $g(A \cup B)$ and $g(A) \cup g(B)$ for an arbitrary function $g$.
+
+Conjecture: For an arbitrary function $g: \mathbb{R} \rightarrow \mathbb{R}$, it is always true that $g(A) \cup g(B) = g(A \cup B)$.
+
+\textbf{Proof:} First we show that $g(A) \cup g(B) \subseteq g(A \cup B)$Let $y$ be such that $y \in g(A) \cup g(B)$. Then, $y = g(x)$ for some $x \in A$ or some $x \in B$. So $x \in A \cup B$ and therefore, $y \in g(A \cup B)$.
+
+Now, to show that $g(A \cup B) \subseteq g(A) \cup g(B)$, consider $y \in g(A \cup B)$. Then, $y = g(x)$ for some $x \in A \cup B$. So $x$ is in A or B. Therefore $y = g(x) \in g(A) \cup g(B)$. \qed \\
+
+
+
+\noindent \textbf{1.2.12}
+Let $y_1 = 6$, and for each $n \in \mathbb{N}$ define $y_{n+1} = \frac{2y_n - 6}{3}$.
+
+(a) Use induction to prove that the sequence satisfies $y_n > -6$ for all $n \in \mathbb{N}$.
+
+\textbf{Proof:} Base case: $n=1$. The statement is satisfied:
+$$ y_1 = 6 > -6$$
+
+Inductive hypothesis: Suppose that the statement holds for $n$. We show that it also holds for $n+1$,
+$$y_{n+1} = \frac{2y_n - 6}{3} > \frac{2(-6) - 6}{3}$$
+$$  = \frac{-18}{3} $$
+$$  = -6$$
+
+So, $y_{n+1} > -6$ and we are done. \qed \\
+
+
+(b) Use another induction argument to show the sequence $(y_1, y_2, y_3, \ldots)$ is decreasing.
+
+\textbf{Proof:} We want to show that for all $n \in \mathbb{N}$,  $y_n > y_{n+1}$. 
+
+Base case: $n=1$. We have $y_1 = 6$
+$$ y_2 = \frac{2y_1 - 6}{3} = \frac{2(6) - 6}{3} = 2 < 6 = y_1$$
+
+So the statement holds for $n=1$.
+
+Inductive hypothesis: Suppose that the statement holds for $n$ and $y_n > y_{n+1}$. We show that it also holds for $n+1$,
+$$y_{n+1} = \frac{2y_n - 6}{3} > \frac{2y_{n+1} - 6}{3} = y_{n+2}$$
+Where the middle inequality arises from the inductive hypothesis. \qed \\
+
+
+
+\noindent \textbf{1.2.13}
+(a) Show how induction can be used to conclude that
+$$ (A_1 \cup A_2 \cup \cdots \cup A_n)^c = A^c_1 \cap A^c_2 \cap \cdots \cap A^c_n $$
+for any finite $n \in \mathbb{N}$.
+
+\textbf{Proof:} Base case: $n=1$. Clearly,
+$$ (A_1)^c = A_1^c$$
+
+Inductive hypothesis: Suppose that the statement holds for $n$ and use this to show that it holds for $n+1$. Grouping the union of the first $n$ sets into one set and applying the usual De Morgan's Law,
+$$ ((A_1 \cup A_2 \cup \cdots \cup A_n) \cup A_{n+1})^c = (A_1 \cup A_2 \cup \cdots \cup A_n)^c \cap A_{n+1}^c$$
+By the I.H.,
+\begin{align*}
+(A_1 \cup A_2 \cup \cdots \cup A_n)^c \cap A_{n+1}^c &= (A^c_1 \cap A^c_2 \cap \cdots \cap A^c_n) \cap A_{n+1}^c \\
+&= A^c_1 \cap A^c_2 \cap \cdots \cap A_n^c \cap A^c_{n+1}
+\end{align*}
+
+(b) It is tempting to appeal to induction to conclude
+$$ ( \bigcup_{i=1}^{\infty} A_i )^c = \bigcap_{i=1}^{\infty} A_i^c, $$
+but induction does not apply here. Induction is used to prove that a
+particular statement holds for every value of $n \in \mathbb{N}$, but this does not
+imply the validity of the infinite case. To illustrate this point, find an
+example of a collection of sets $B_1, B_2, B_3, \ldots$ where $\bigcap_{i=1}^{n} B_i \neq \emptyset$ is true
+for every $n \in \mathbb{N}$, but $\bigcap_{i=1}^{\infty} B_i \neq \emptyset$ fails.
+
+An example of such a collection of sets is
+$$B_1 = \{1,2,...\}$$
+$$B_2 = \{2,3,...\}$$
+$$\vdots$$
+
+(c) Nevertheless, the infinite version of De Morgan’s Law stated in (b) is a
+valid statement. Provide a proof that does not use induction.
+
+\textbf{Proof:} Suppose that $x \in ( \bigcup_{i=1}^{\infty} A_i )^c$. Then $x \notin \bigcup_{i=1}^{\infty} A_i$, which means that for all $A_i$, $x \notin A_i$. Thus, for all $A_i$, $x \in A_i^c$, so $x \in \bigcap_{i=1}^{\infty} A_i^c$.
+
+We have shown that $(\bigcup_{i=1}^{\infty} A_i )^c \subseteq \bigcap_{i=1}^{\infty} A_i^c$. To show the other direction, let $x \in \bigcap_{i=1}^{\infty} A_i^c$. Then for all $A_i$, $x \in A_i^c$, which means that $x \notin A_i$ for all $A_i$. This implies that $x \notin \bigcup_{i=1}^{\infty} A_i$ or rather $x \in (\bigcup_{i=1}^{\infty} A_i)^c$.
+
+This proves that $\bigcap_{i=1}^{\infty} A_i^c \subseteq (\bigcup_{i=1}^{\infty} A_i )^c$ and completes the proof. \qed \\
+
+
+\end{document}
