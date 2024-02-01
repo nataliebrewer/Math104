@@ -7,5 +7,5 @@ Math 104 covers the fundamentals of real analysis. Topics include but are not li
 Textbook: [Understanding Analysis, 2nd Ed, Stephen Abbott. ](https://link.springer.com/book/10.1007/978-1-4939-2712-8Links)
 
 ### Repository Structure
--Contains notes from lecture and completed homeworks.
+Contains notes from lecture and completed homeworks.
 
